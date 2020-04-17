@@ -6,13 +6,16 @@ import FileBase64 from "react-file-base64";
 //This demo uses https://github.com/pubkey/eth-crypto to encrypt and decrypt a file with ethereum pub/priv keys
 
 class EncryptedFileWorkflow extends React.Component {
-  state = {
-    // ethAddress: "0xb550520F22fFb494f862F44A2fe01E1B4e1A86bb",
-    // ethPrivateKey:
-    //   "0x662466d117f5957c6fe18d029c23a94e3b37b45c83b8dbeeb995e84105a6b35a",
-    imageBase64: "",
-    decryptedBase64: "",
-  };
+  constructor() {
+    super();
+    this.state = {
+      // ethAddress: "0xb550520F22fFb494f862F44A2fe01E1B4e1A86bb",
+      // ethPrivateKey:
+      //   "0x662466d117f5957c6fe18d029c23a94e3b37b45c83b8dbeeb995e84105a6b35a",
+      imageBase64: "",
+      decryptedBase64: "",
+    };
+  }
 
   encryptAndDecrypt = async (files) => {
     const identity = EthCrypto.createIdentity();
